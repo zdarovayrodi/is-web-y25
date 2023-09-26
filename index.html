@@ -3,47 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>TOURS</title>
   </head>
   <body>
     <header>
       <div>
         <div>Mikhail The Greatest Tours</div>
-        <nav>
-          <a>Главная</a>
-          <a>Наши туры</a>
-          <a>О нас</a>
-          <a>Контакты</a>
+        <nav class="">
+          <a href="#" class="header__nav__item">Главная</a>
+          <a href="#" class="header__nav__item">Наши туры</a>
+          <a href="#" class="header__nav__item">О нас</a>
+          <a href="#" class="header__nav__item">Контакты</a>
         </nav>
       </div>
     </header>
     <main>
       <div>
         <div>
-          <h1>
+          <h1 class="main__h1">
             Туры по россии,
             <br />
             северо-западу и Карелии из СПБ
           </h1>
-          <h3>Автобусные туры повышенной комфортности</h3>
+          <h3 class="main__h3">Автобусные туры повышенной комфортности</h3>
         </div>
         <div>
-          <button>Каталог туров</button>
-          <button>Горящие туры</button>
+          <button class="main__button button__green">Каталог туров</button>
+          <button class="main__button button__yellow">Горящие туры</button>
         </div>
         <div>
-          <a>Все туры</a>
-          <span>↓</span>
+          <a href="#" class="main__scroll-link">Все туры</a>
+          <span class="main__scroll-link-arr">↓</span>
         </div>
       </div>
     </main>
 
     <section>
       <div>
-        <h2>О Карелии</h2>
+        <h2 class="section__h2">О Карелии</h2>
 
         <article>
-          <h3>История</h3>
+          <h3 class="article_h3">История</h3>
           <p>
             Карелия — исторический и географический регион на северо-западе
             России. Здесь находится множество озёр и лесов. Веками эта область
@@ -52,8 +59,8 @@
         </article>
 
         <article>
-          <h3>Природные достопримечательности</h3>
-          <ul>
+          <h3 class="article_h3">Природные достопримечательности</h3>
+          <ul class="article_ul">
             <li>
               <strong>Озеро Онежское</strong> — крупнейшее озеро Европы. Здесь
               можно покататься на лодке и насладиться живописными пейзажами.
@@ -75,9 +82,9 @@
 
     <section>
       <article>
-        <h2>Специальная акция</h2>
-        <p>Скидки для студентов ИТМО</p>
-        <pre><code>
+        <h2 class="section__h2">Специальная акция</h2>
+        <p class="section__extra-text">Скидки для студентов ИТМО</p>
+        <pre class="article_bg-lightblue"><code>
 function calculateDiscount() {
   if (isITMOStudent) {
     discount = 20%;
@@ -88,18 +95,20 @@ function calculateDiscount() {
     </section>
 
     <section>
-      <blockquote>
-        <p>
+      <blockquote class="container container_col">
+        <p class="blockquote_p">
           Путешествия — это путь к открытию новых горизонтов, позволяющий нам
           лучше понять мир и себя самих.
         </p>
-        <cite>~<sub>Михаил Шайдулин</sub> <sup>2023</sup></cite>
+        <cite class="blockquote_cite"
+          >~<sub>Михаил Шайдулин</sub> <sup>2023</sup></cite
+        >
       </blockquote>
     </section>
 
     <section>
       <div>
-        <h3>Карта Карелии</h3>
+        <h3 class="section__h3">Карта Карелии</h3>
         <figure>
           <div style="font-family: monospace, fixed; font-weight: bold; overflow: hidden">
             <span style=";color:#aaa;background-color:#fff">::tt;%@@</span><span style=";color:#fff;background-color:#aaa">8</span><span style=";color:#aaa;background-color:#fff">t@X@S::tt;;::%SXt;;:tt:tttt@X@8@@@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@@8@</span><br />
