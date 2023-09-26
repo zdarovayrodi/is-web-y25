@@ -1,0 +1,270 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+
+  background-color: rgba(37, 71, 35, 1);
+}
+
+section {
+  padding: 40px 0;
+}
+
+.main__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  padding: 20px 40px;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.container_screen {
+  min-height: 80vh;
+}
+
+.container_row {
+  flex-direction: row;
+}
+
+.container_col {
+  flex-direction: column;
+}
+
+.container_justify_between {
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header__nav__item {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.main__forest_bg {
+  background-image: url("img/forest_bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -2;
+  height: 100%;
+
+  min-height: 100%;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+}
+
+.main__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__h1 {
+  font-size: 32px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: calc(28 * 1.5)px;
+}
+.main__h3 {
+  font-size: 24px;
+  color: #fdd835;
+  font-weight: 500;
+  letter-spacing: -1px;
+
+  text-transform: uppercase;
+  text-align: center;
+  line-height: calc(20 * 1.5)px;
+}
+
+.main__button_group {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  gap: 10px;
+}
+
+.main__button {
+  padding: 10px 20px;
+  border-radius: 1px;
+  cursor: pointer;
+
+  outline: none;
+  border: 0;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+
+  transition: all 0.3s ease-in-out;
+
+  background-size: 200% auto;
+
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    background-position: center center;
+    color: #fff;
+    background-size: 170% auto;
+  }
+}
+
+.button__green {
+  background-image: linear-gradient(to right, #66bb6a 0%, #388e3c 100%);
+}
+
+.button__yellow {
+  background-image: linear-gradient(to right, #fdd835 0%, #f57f17 100%);
+}
+
+.section__h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #000;
+
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+  line-height: calc(32 * 1.5)px;
+  letter-spacing: -1px;
+}
+
+.section__h3 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+  line-height: calc(24 * 1.5)px;
+  letter-spacing: -1px;
+}
+
+.article_bg-lightblue {
+  padding: 20px 20px;
+  background-color: #e3f2fd;
+}
+
+.article_bg-lightgreen {
+  padding: 20px 20px;
+  background-color: #e8f5e9;
+}
+
+.article_h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+  line-height: calc(20 * 1.5)px;
+  letter-spacing: -1px;
+}
+
+.mt {
+  margin-top: 20px;
+}
+
+.article_ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section__extra-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  
+  margin-top: -15px;
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+  line-height: calc(20 * 1.5)px;
+  letter-spacing: 3px;
+}
+
+.main__scroll-link-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+
+  margin-top: 100px;
+  margin-bottom: -100px;
+}
+
+.main__scroll-link {
+ text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main__scroll-link-arr {
+  font-size: 48px;
+  color: #fff;
+}
+
+.blockquote_p {
+  font-size: 32px;
+  color: #fff;
+}
+
+.blockquote_cite {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 30px;
+}
+
+footer {
+ width: 100%;
+ background-color: rgb(66, 66, 66);
+ color: white;
+}
