@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "### Шайдулин Михаил Андреевич М33061",
+  "main": "index.html",
+  "scripts": {
+    "tailwind": "tailwindcss  -i ./style.css -o ./output.css --minify  & live-server  ",
+    "dev": " live-server & tailwind & postcss css/main.css -o ./build/output.css --minify --watch  ",
+    "start": "live-server ./ ",
+    "build": "postcss css/main.css -o build/tailwind.css --minify"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}

@@ -1,23 +1,9 @@
-*,
-::after,
-::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   font-family: "Inter", sans-serif;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-
-  width: 100%;
-
-  background-color: rgba(37, 71, 35, 1);
 }
 
 section {
