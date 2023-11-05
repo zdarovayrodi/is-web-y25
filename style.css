@@ -159,18 +159,6 @@ section {
   background-image: linear-gradient(to right, #fdd835 0%, #f57f17 100%);
 }
 
-.section__h2 {
-  font-size: 48px;
-  font-weight: 600;
-  color: #000;
-
-  margin-bottom: 20px;
-
-  text-transform: uppercase;
-  line-height: calc(32 * 1.5) px;
-  letter-spacing: -1px;
-}
-
 .section__h3 {
   font-size: 32px;
   font-weight: 600;
