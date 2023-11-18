@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   font-family: "Inter", sans-serif;
-}
+} */
 
 section {
   padding: 40px 0;
@@ -242,4 +242,15 @@ footer {
   width: 100%;
   background-color: rgb(66, 66, 66);
   color: white;
+}
+
+body.home nav a.home,
+body.contact nav a.contact,
+body.tours nav a.tours,
+body.about nav a.about {
+  text-decoration: underline;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
