@@ -248,7 +248,8 @@ body.home nav a.home,
 body.contact nav a.contact,
 body.tours nav a.tours,
 body.about nav a.about,
-body.constructor nav a.constructor {
+body.constructor nav a.constructor,
+body.album nav a.album {
   text-decoration: underline;
 }
 
