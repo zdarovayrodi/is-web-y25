@@ -16,6 +16,9 @@
       rel="stylesheet"
     />
     <link href=”./output.css” rel=”stylesheet”>
+    <!-- Typing animation -->
+    <!-- https://github.com/mattboldt/typed.js/ -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <title>TOURS</title>
   </head>
   <body class="home">
@@ -118,13 +121,20 @@
           Спецаильная акция
         </h2>
         <p class="section__extra-text">Скидки для студентов ИТМО</p>
-        <pre class="article_bg-lightblue"><code>
+        <pre class="article_bg-lightblue"><code id="typed">
 function calculateDiscount() {
   if (isITMOStudent) {
     discount = 20%;
   }
 }
-      </code></pre>
+      </code>
+      <script>
+        var typed = new Typed('#typed', {
+          strings: ['function calculateDiscount() {\n  if (isITMOStudent) {\n    discount = 20%;\n  }\n}'],
+          typeSpeed: 35,
+        });
+      </script>
+    </pre>
       </article>
     </section>
 
