@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <title>О нас | Наши туры</title>
+    <link href="../style.css" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href=”./output.css” rel=”stylesheet”>
+  </head>
+  <body class="constructor">
+    <header class="py-2 sticky top-0 z-[999] w-full bg-green-900">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-xl font-bold">
+          Mikhail The Greatest Tours
+        </div>
+        <nav class="flex flex-row gap-4">
+          <a href="../index.html" class="text-white home">Главная</a>
+          <a href="./tours.html" class="text-white tours">Наши туры</a>
+          <a href="./about.html" class="text-white about">О нас</a>
+          <a href="./contact.html" class="text-white contact">Контакты</a>
+          <a href="./constructor.html" class="text-white constructor"
+            >Чек-лист</a
+          >
+          <a href="./album.html" class="text-white album">Альбом</a>
+        </nav>
+      </div>
+    </header>
+    <section class="bg-gray-100 h-full flex items-center justify-center">
+      <div class="container mx-auto bg-white p-8 rounded shadow-md flex-col">
+        <h1 class="text-2xl font-bold mb-1">
+          Бесплатный чек-лист для путешествия
+        </h1>
+        <p class="font-bold mb-4 text-gray-600">
+          Ответьте на пару вопросов и получите чек-лист!
+        </p>
+        <form id="scheduleForm" class="mb-4">
+          <label
+            for="weekdays"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Путешествие на сколько дней?</label
+          >
+          <select
+            name="weekdays"
+            id="weekdays"
+            class="border border-gray-300 p-2 w-full"
+          >
+            <option value="5">5 дней</option>
+            <option value="6">6 дней</option>
+          </select>
+
+          <label
+            for="excursions"
+            class="block mt-4 text-gray-700 text-sm font-bold mb-2"
+            >Максимальное количество экскурсий</label
+          >
+          <input
+            type="number"
+            name="excursions"
+            id="excursions"
+            class="border border-gray-300 p-2 w-full"
+            min="1"
+            value="1"
+          />
+
+          <label
+            for="language"
+            class="block mt-4 text-gray-700 text-sm font-bold mb-2"
+            >Язык для гида</label
+          >
+          <input
+            type="text"
+            name="language"
+            id="language"
+            class="border border-gray-300 p-2 w-full"
+            value="Русский"
+          />
+
+          <label class="block mt-4 text-gray-700 text-sm font-bold mb-2"
+            >Выберите картинки</label
+          >
+          <div class="grid grid-cols-6 gap-4">
+            <div class="flex flex-col">
+              <input type="checkbox" name="images" value="image1" class="" />
+              <img src="../img/image1.jpg" alt="Image 1" />
+            </div>
+            <div class="flex flex-col">
+              <input type="checkbox" name="images" value="image2" class="" />
+              <img src="../img/image2.jpg" alt="Image 2" />
+            </div>
+            <div class="flex flex-col">
+              <input type="checkbox" name="images" value="image3" class="" />
+              <img src="../img/image3.jpg" alt="Image 3" />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="mt-4 bg-green-500 text-white py-2 px-4 rounded-lg"
+          >
+            Сгенерировать
+          </button>
+        </form>
+
+        <div id="scheduleResults" class="mt-8"></div>
+      </div>
+
+      <script src="../scripts/tableGenerator.js"></script>
+    </section>
+    <footer>
+      <div class="container container_col" id="stats">
+        <p>&copy; 2023 Mikhail The Greatest Tours.</p>
+        <p>Все права защищены.</p>
+      </div>
+    </footer>
+  </body>
+  <script src="../scripts/pageLoadStats.js"></script>
+</html>

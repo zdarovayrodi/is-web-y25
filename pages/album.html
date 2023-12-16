@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="../style.css" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href=”./output.css” rel=”stylesheet”>
+    <title>Альбом</title>
+  </head>
+  <body class="album">
+    <header class="py-2 sticky top-0 z-[999] w-full bg-green-900">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-xl font-bold">
+          Mikhail The Greatest Tours
+        </div>
+        <nav class="flex flex-row gap-4">
+          <a href="../index.html" class="text-white home">Главная</a>
+          <a href="./tours.html" class="text-white tours">Наши туры</a>
+          <a href="./about.html" class="text-white about">О нас</a>
+          <a href="./contact.html" class="text-white contact">Контакты</a>
+          <a href="./constructor.html" class="text-white constructor"
+            >Чек-лист</a
+          >
+          <a href="./album.html" class="text-white album">Альбом</a>
+        </nav>
+      </div>
+    </header>
+    <div class="flex flex-wrap justify-center">
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+            .then(function (response) {
+              if (response.ok) {
+                return response.json();
+              }
+              throw new Error("Network response was not ok.");
+            })
+            .then(function (data) {
+              var row = '<div class="flex flex-wrap justify-center">';
+              data.forEach(function (value, key) {
+                var photo =
+                  '<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">' +
+                  '<img src="../img/placeholder.jpg" data-src="' +
+                  value.thumbnailUrl +
+                  '" alt="' +
+                  value.title +
+                  '" class="w-full lazyload">' +
+                  "</div>";
+                if (key % 4 == 0 && key != 0) {
+                  row += '</div><div class="flex flex-wrap justify-center">';
+                }
+                row += photo;
+              });
+              row += "</div>";
+              document.querySelector("#photos").innerHTML = row;
+              lazyload();
+            })
+            .catch(function (error) {
+              document.querySelector("#photos").innerHTML =
+                "<p>Ошибка загрузки данных. Проверьте интернет-соединение и попробуйте снова.</p>";
+            });
+        });
+
+        function lazyload() {
+          var lazyImages = [].slice.call(
+            document.querySelectorAll("img.lazyload")
+          );
+
+          if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function (
+              entries,
+              observer
+            ) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  let lazyImage = entry.target;
+                  lazyImage.src = lazyImage.dataset.src;
+                  lazyImage.classList.remove("lazyload");
+                  lazyImageObserver.unobserve(lazyImage);
+                }
+              });
+            });
+
+            lazyImages.forEach(function (lazyImage) {
+              lazyImageObserver.observe(lazyImage);
+            });
+          } else {
+            console.log("Update your browser");
+          }
+        }
+      </script>
+      <div id="photos"></div>
+    </div>
+  </body>
+</html>
