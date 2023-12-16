@@ -43,11 +43,11 @@
               $.each(data, function (key, value) {
                 var photo =
                   '<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">' +
-                  '<img src="' +
+                  '<img src="../img/placeholder.jpg" data-src="' +
                   value.thumbnailUrl +
                   '" alt="' +
                   value.title +
-                  '" class="w-full">' +
+                  '" class="w-full lazyload">' +
                   "</div>";
                 if (key % 4 == 0 && key != 0) {
                   row += '</div><div class="flex flex-wrap justify-center">';
@@ -56,9 +56,39 @@
               });
               row += "</div>";
               $("#photos").append(row);
+              lazyload();
             }
           );
         });
+        // добавить ошибку
+        function lazyload() {
+          var lazyImages = [].slice.call(
+            document.querySelectorAll("img.lazyload")
+          );
+
+          if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function (
+              entries,
+              observer
+            ) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  let lazyImage = entry.target;
+                  lazyImage.src = lazyImage.dataset.src;
+                  lazyImage.classList.remove("lazyload");
+                  lazyImageObserver.unobserve(lazyImage);
+                }
+              });
+            });
+
+            lazyImages.forEach(function (lazyImage) {
+              lazyImageObserver.observe(lazyImage);
+            });
+          } else {
+            // fallback for older browsers
+            console.log("Update your browser");
+          }
+        }
       </script>
       <div id="photos"></div>
     </div>
