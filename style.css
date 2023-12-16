@@ -1,23 +1,10 @@
-*,
-::after,
-::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
+/* body {
   font-family: "Inter", sans-serif;
-}
-
-header {
-  position: sticky;
-  top: 0;
-
-  width: 100%;
-
-  background-color: rgba(37, 71, 35, 1);
-}
+} */
 
 section {
   padding: 40px 0;
@@ -102,7 +89,7 @@ section {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
-  line-height: calc(28 * 1.5)px;
+  line-height: calc(28 * 1.5) px;
 }
 .main__h3 {
   font-size: 24px;
@@ -112,7 +99,7 @@ section {
 
   text-transform: uppercase;
   text-align: center;
-  line-height: calc(20 * 1.5)px;
+  line-height: calc(20 * 1.5) px;
 }
 
 .main__button_group {
@@ -158,18 +145,6 @@ section {
   background-image: linear-gradient(to right, #fdd835 0%, #f57f17 100%);
 }
 
-.section__h2 {
-  font-size: 48px;
-  font-weight: 600;
-  color: #000;
-
-  margin-bottom: 20px;
-
-  text-transform: uppercase;
-  line-height: calc(32 * 1.5)px;
-  letter-spacing: -1px;
-}
-
 .section__h3 {
   font-size: 32px;
   font-weight: 600;
@@ -178,7 +153,7 @@ section {
   margin-bottom: 20px;
 
   text-transform: uppercase;
-  line-height: calc(24 * 1.5)px;
+  line-height: calc(24 * 1.5) px;
   letter-spacing: -1px;
 }
 
@@ -200,7 +175,7 @@ section {
   margin-bottom: 10px;
 
   text-transform: uppercase;
-  line-height: calc(20 * 1.5)px;
+  line-height: calc(20 * 1.5) px;
   letter-spacing: -1px;
 }
 
@@ -220,12 +195,12 @@ section {
   font-size: 14px;
   font-weight: 500;
   color: #000;
-  
+
   margin-top: -15px;
   margin-bottom: 10px;
 
   text-transform: uppercase;
-  line-height: calc(20 * 1.5)px;
+  line-height: calc(20 * 1.5) px;
   letter-spacing: 3px;
 }
 
@@ -241,7 +216,7 @@ section {
 }
 
 .main__scroll-link {
- text-decoration: none;
+  text-decoration: none;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -264,7 +239,18 @@ section {
 }
 
 footer {
- width: 100%;
- background-color: rgb(66, 66, 66);
- color: white;
+  width: 100%;
+  background-color: rgb(66, 66, 66);
+  color: white;
+}
+
+body.home nav a.home,
+body.contact nav a.contact,
+body.tours nav a.tours,
+body.about nav a.about {
+  text-decoration: underline;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
