@@ -2,6 +2,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const scheduleForm = document.getElementById('scheduleForm');
     const scheduleResults = document.getElementById('scheduleResults');
 
+    // load from localstorage
+    const storedParams = JSON.parse(localStorage.getItem('scheduleParams'));
+    if (storedParams) {
+        document.getElementById('weekdays').value = storedParams.weekdays;
+        document.getElementById('excursions').value = storedParams.excursions;
+        scheduleResults.innerHTML = storedParams.scheduleHTML;
+
+        storedParams.selectedImages.forEach(image => {
+            const checkbox = document.querySelector(`input[name="images"][value="${image.value}"]`);
+            if (checkbox) {
+                checkbox.checked = true;
+            }
+        });
+    }
+
     scheduleForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -41,23 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
             weekdays,
             excursions,
             language,
-            selectedImages
+            selectedImages,
+            scheduleHTML
         };
 
         localStorage.setItem('scheduleParams', JSON.stringify(scheduleParams));
     });
-
-    // Загрузка параметров из локального хранилища при загрузке страницы
-    const storedParams = JSON.parse(localStorage.getItem('scheduleParams'));
-    if (storedParams) {
-        document.getElementById('weekdays').value = storedParams.weekdays;
-        document.getElementById('excursions').value = storedParams.excursions;
-
-        storedParams.selectedImages.forEach(image => {
-            const checkbox = document.querySelector(`input[name="images"][value="${image.value}"]`);
-            if (checkbox) {
-                checkbox.checked = true;
-            }
-        });
-    }
 });
